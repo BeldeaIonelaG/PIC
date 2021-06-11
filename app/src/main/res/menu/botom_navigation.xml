@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_setting"
+        android:icon="@drawable/ic_logout"
+        android:title="Log out"/>
+
+    <item
+        android:id="@+id/nav_feed"
+        android:icon="@drawable/ic_feed"
+        android:title="Feed"/>
+
+    <item
+        android:id="@+id/nav_post"
+        android:icon="@drawable/ic_insertp"
+        android:title="Post"/>
+
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_cam"
+        android:title="Camera"/>
+</menu>
