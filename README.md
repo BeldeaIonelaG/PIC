@@ -9,6 +9,6 @@ activitate main:
 
 
     -> bottom navigation cu fragmente
-    -> fragment1: recycler view
+    -> fragment1: recycler view cu search
     -> fragment2: incarcare imagini de pe telefon in Firestore si Post in Realtime Database
     -> fragmant3: acces camera + upload poza noua
