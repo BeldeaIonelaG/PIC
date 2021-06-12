@@ -16,12 +16,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
@@ -63,6 +66,7 @@ public class FeedFragment extends Fragment implements ImageAdapter.OnItemClickLi
 
     private DatabaseReference mDatabaseRef;
     private List<Post> mPosts;
+    private EditText search1;
 
 
     @Nullable
@@ -78,6 +82,7 @@ public class FeedFragment extends Fragment implements ImageAdapter.OnItemClickLi
         mPosts = new ArrayList<>();
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("posts");
+        search1 = v.findViewById(R.id.edit_search);
 
         /*if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -107,6 +112,25 @@ public class FeedFragment extends Fragment implements ImageAdapter.OnItemClickLi
             public void onCancelled(@NonNull @org.jetbrains.annotations.NotNull DatabaseError databaseError) {
                 mProgressCircle.setVisibility(View.INVISIBLE);
                 Toast.makeText(getActivity(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        search1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString()!="") {
+                    mAdapter.getFilter().filter(s.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 

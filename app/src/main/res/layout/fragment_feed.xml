@@ -12,9 +12,36 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
+    <ImageView
+        android:id="@+id/search_ic_uno"
+        android:layout_width="46dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-53dp"
+        android:layout_marginLeft="-53dp"
+
+        android:layout_marginEnd="-1dp"
+        android:layout_marginRight="-1dp"
+        android:layout_toStartOf="@+id/edit_search"
+        android:layout_toLeftOf="@+id/edit_search"
+        android:background="@color/red1"
+        android:src="@drawable/ic_search" />
+
+    <EditText
+        android:id="@+id/edit_search"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/red1"
+        android:hint="Type to search" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="706dp"
+        android:layout_below="@+id/edit_search"
+        android:layout_marginTop="2dp" />
 
 </RelativeLayout>
